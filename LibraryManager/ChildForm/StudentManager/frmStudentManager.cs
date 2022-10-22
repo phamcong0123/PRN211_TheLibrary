@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace LibraryManager
+namespace LibraryManager.StudentManager
 {
-    public partial class frmMainManager : Form
+    public partial class frmStudentManager : Form
     {
-        public frmMainManager()
+        public frmStudentManager()
         {
             InitializeComponent();
         }
