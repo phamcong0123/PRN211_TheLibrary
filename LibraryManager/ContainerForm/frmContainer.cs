@@ -1,4 +1,6 @@
-﻿using LibraryManager.BookManager;
+﻿using BusinessObject;
+using LibraryManager.BookManager;
+using LibraryManager.ChildForm.Personal_Info;
 using LibraryManager.Lending_Manager;
 using LibraryManager.StudentManager;
 using System;
@@ -22,6 +24,10 @@ namespace LibraryManager
         frmStudentManager? StudentManager;
         frmBookManager? BookManager;
         frmLendingManager? LendingManager;
+        frmInfo? InfoManager;
+        Librarian librarian;
+
+        public Librarian Librarian { get => librarian; set => librarian = value; }
 
         private void frmContainer_Load(object sender, EventArgs e)
         {
@@ -40,6 +46,7 @@ namespace LibraryManager
             CloseAllChildForm();
             BookManager = new frmBookManager();
             BookManager.MdiParent = this;
+            BookManager.Dock = DockStyle.Fill;
             BookManager.Show();
         }
 
@@ -55,7 +62,19 @@ namespace LibraryManager
             if (StudentManager != null) StudentManager.Close();
             if (BookManager != null) BookManager.Close();
             if (LendingManager != null) LendingManager.Close();
+            if (InfoManager != null) InfoManager.Close();
         }
 
+        private void thayDToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CloseAllChildForm();
+            InfoManager = new frmInfo
+            {
+                Librarian = librarian
+            };
+            InfoManager.MdiParent = this;
+            InfoManager.Dock = DockStyle.Fill;
+            InfoManager.Show();
+        }
     }
 }

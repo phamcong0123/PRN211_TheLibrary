@@ -4,16 +4,19 @@
     <Compile Update="ChildForm\BookManager\frmBookManager.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="ChildForm\BookManager\frmUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="ChildForm\Lending Manager\frmLendingManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ChildForm\Personal Info\frmInfo.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="ChildForm\StudentManager\frmStudentManager.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="ContainerForm\frmContainer.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="LoginForm\frmLogin.cs">

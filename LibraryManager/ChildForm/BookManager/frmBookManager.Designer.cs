@@ -31,7 +31,6 @@
             this.dvgData = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.txtTitle = new System.Windows.Forms.TextBox();
-            this.cboPublishYear = new System.Windows.Forms.ComboBox();
             this.cboCategory = new System.Windows.Forms.ComboBox();
             this.txtBookID = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -39,6 +38,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
+            this.cboYear = new System.Windows.Forms.ComboBox();
+            this.btnClear = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dvgData)).BeginInit();
             this.SuspendLayout();
             // 
@@ -46,13 +47,15 @@
             // 
             this.dvgData.AllowUserToAddRows = false;
             this.dvgData.AllowUserToDeleteRows = false;
-            this.dvgData.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.dvgData.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dvgData.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dvgData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dvgData.Location = new System.Drawing.Point(15, 97);
             this.dvgData.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dvgData.Name = "dvgData";
+            this.dvgData.RowHeadersVisible = false;
             this.dvgData.RowHeadersWidth = 51;
             this.dvgData.RowTemplate.Height = 29;
             this.dvgData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -75,29 +78,25 @@
             this.txtTitle.Name = "txtTitle";
             this.txtTitle.Size = new System.Drawing.Size(218, 23);
             this.txtTitle.TabIndex = 2;
-            // 
-            // cboPublishYear
-            // 
-            this.cboPublishYear.FormattingEnabled = true;
-            this.cboPublishYear.Location = new System.Drawing.Point(415, 60);
-            this.cboPublishYear.Name = "cboPublishYear";
-            this.cboPublishYear.Size = new System.Drawing.Size(98, 23);
-            this.cboPublishYear.TabIndex = 3;
+            this.txtTitle.TextChanged += new System.EventHandler(this.txtTitle_TextChanged);
             // 
             // cboCategory
             // 
+            this.cboCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboCategory.FormattingEnabled = true;
             this.cboCategory.Location = new System.Drawing.Point(90, 60);
             this.cboCategory.Name = "cboCategory";
             this.cboCategory.Size = new System.Drawing.Size(194, 23);
-            this.cboCategory.TabIndex = 4;
+            this.cboCategory.TabIndex = 3;
+            this.cboCategory.SelectedIndexChanged += new System.EventHandler(this.cboCategory_SelectedIndexChanged);
             // 
             // txtBookID
             // 
             this.txtBookID.Location = new System.Drawing.Point(90, 20);
             this.txtBookID.Name = "txtBookID";
             this.txtBookID.Size = new System.Drawing.Size(124, 23);
-            this.txtBookID.TabIndex = 5;
+            this.txtBookID.TabIndex = 1;
+            this.txtBookID.TextChanged += new System.EventHandler(this.txtBookID_TextChanged);
             // 
             // label2
             // 
@@ -128,21 +127,46 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(691, 109);
+            this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAdd.Location = new System.Drawing.Point(686, 181);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(162, 57);
-            this.btnAdd.TabIndex = 9;
+            this.btnAdd.TabIndex = 6;
             this.btnAdd.Text = "Thêm sách mới";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(691, 191);
+            this.btnUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnUpdate.Location = new System.Drawing.Point(686, 263);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(162, 57);
-            this.btnUpdate.TabIndex = 10;
+            this.btnUpdate.TabIndex = 7;
             this.btnUpdate.Text = "Cập nhật sách";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
+            // cboYear
+            // 
+            this.cboYear.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboYear.FormattingEnabled = true;
+            this.cboYear.Location = new System.Drawing.Point(415, 60);
+            this.cboYear.Name = "cboYear";
+            this.cboYear.Size = new System.Drawing.Size(123, 23);
+            this.cboYear.TabIndex = 4;
+            this.cboYear.SelectedIndexChanged += new System.EventHandler(this.cboYear_SelectedIndexChanged);
+            // 
+            // btnClear
+            // 
+            this.btnClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClear.Location = new System.Drawing.Point(686, 23);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(162, 55);
+            this.btnClear.TabIndex = 5;
+            this.btnClear.Text = "Xoá bộ lọc";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // frmBookManager
             // 
@@ -150,6 +174,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(869, 481);
             this.ControlBox = false;
+            this.Controls.Add(this.btnClear);
+            this.Controls.Add(this.cboYear);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.label4);
@@ -157,10 +183,10 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtBookID);
             this.Controls.Add(this.cboCategory);
-            this.Controls.Add(this.cboPublishYear);
             this.Controls.Add(this.txtTitle);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dvgData);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmBookManager";
             this.Text = "Trình quản lý sách";
@@ -177,7 +203,6 @@
         private DataGridView dvgData;
         private Label label1;
         private TextBox txtTitle;
-        private ComboBox cboPublishYear;
         private ComboBox cboCategory;
         private TextBox txtBookID;
         private Label label2;
@@ -185,5 +210,7 @@
         private Label label4;
         private Button btnAdd;
         private Button btnUpdate;
+        private ComboBox cboYear;
+        private Button btnClear;
     }
 }
