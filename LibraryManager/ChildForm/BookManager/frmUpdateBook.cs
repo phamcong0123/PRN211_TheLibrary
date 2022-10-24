@@ -14,38 +14,38 @@ using System.Xml.Linq;
 
 namespace LibraryManager.ChildForm.BookManager
 {
-    public partial class frmUpdate : Form
+    public partial class frmUpdateBook : Form
     {
-        public frmUpdate()
+        public frmUpdateBook()
         {
             InitializeComponent();
         }
-        internal IBookRepository bookRepository;
+        internal IBookRepository BookRepository;
         internal bool InsertOrUpdate;
-        internal Book bookInfo;       
+        internal Book BookInfo;       
         private void frmUpdate_Load(object sender, EventArgs e)
         {
             LoadComboBoxFilter();        
             if (!InsertOrUpdate)
             {
                 this.Text = "Quản lý thư viện - Cập nhật thông tin sách";
-                txtBookID.Text = bookInfo.BookID.ToString();
-                txtTitle.Text = bookInfo.Title;
-                txtPrinter.Text = bookInfo.Printer;
-                txtQuantity.Text = bookInfo.Quantity.ToString();
-                txtPrice.Text = bookInfo.Price.ToString();
-                txtAuthor.Text = bookInfo.Author;
-                txtYear.Text = bookInfo.PublishYear;
-                cboCategory.SelectedValue = bookInfo.Category.CategoryID;
+                txtBookID.Text = BookInfo.BookID.ToString();
+                txtTitle.Text = BookInfo.Title;
+                txtPrinter.Text = BookInfo.Printer;
+                txtQuantity.Text = BookInfo.Quantity.ToString();
+                txtPrice.Text = BookInfo.Price.ToString();
+                txtAuthor.Text = BookInfo.Author;
+                txtYear.Text = BookInfo.PublishYear;
+                cboCategory.SelectedValue = BookInfo.Category.CategoryID;
                 btnConfirm.Text = "Cập nhật";
             } else
             {
-                txtBookID.Text = bookRepository.GetNewProperBookID().ToString();
+                txtBookID.Text = BookRepository.GetNewProperBookID().ToString();
             }
         }
         private void btnConfirm_Click(object sender, EventArgs e)
         {
-            bookInfo = new Book
+            BookInfo = new Book
             {
                 Author = txtAuthor.Text,
                 BookID = int.Parse(txtBookID.Text),
@@ -58,10 +58,10 @@ namespace LibraryManager.ChildForm.BookManager
             };
             if (InsertOrUpdate)
             {
-                bookRepository.AddBook(bookInfo);
+                BookRepository.AddBook(BookInfo);
             } else
             {
-                bookRepository.UpdateBook(bookInfo);               
+                BookRepository.UpdateBook(BookInfo);               
             }
         }
 
@@ -118,10 +118,15 @@ namespace LibraryManager.ChildForm.BookManager
 
         private void txtTitle_Validating(object sender, CancelEventArgs e)
         {
-            if (!ValidateHelper.validateVietnameseWithNum(txtTitle.Text))
+            if (!ValidateHelper.validateVietnameseWithNum(txtTitle.Text.Trim()))
             {
                 e.Cancel = true;
                 infoError.SetError(txtTitle, "Tựa đề không thể chứa các ký tự đặc biệt");
+            }
+            if (txtTitle.Text.Trim().Length == 0)
+            {
+                e.Cancel = true;
+                infoError.SetError(txtTitle, "Tựa đề không thể để trống");
             }
         }
 
@@ -132,11 +137,17 @@ namespace LibraryManager.ChildForm.BookManager
 
         private void txtPrinter_Validating(object sender, CancelEventArgs e)
         {
-            if (!ValidateHelper.validateVietnamese(txtPrinter.Text))
+            if (!ValidateHelper.validateVietnamese(txtPrinter.Text.Trim()))
             {
                 e.Cancel = true;
                 infoError.SetError(txtPrinter, "Tên nhà xuất bản không thể chứa các chữ số và ký tự đặc biệt");
             }
+            if (txtPrinter.Text.Trim().Length == 0)
+            {
+                e.Cancel = true;
+                infoError.SetError(txtPrinter, "Tên nhà xuất bản không thể để trống");
+            }
+
         }
 
         private void txtPrinter_Validated(object sender, EventArgs e)
@@ -146,10 +157,15 @@ namespace LibraryManager.ChildForm.BookManager
 
         private void txtAuthor_Validating(object sender, CancelEventArgs e)
         {
-            if (!ValidateHelper.validateVietnamese(txtAuthor.Text))
+            if (!ValidateHelper.validateVietnamese(txtAuthor.Text.Trim()))
             {
                 e.Cancel = true;
                 infoError.SetError(txtAuthor, "Tên tác giả không thể chứa các chữ số và ký tự đặc biệt");
+            }
+            if (txtAuthor.Text.Trim().Length == 0)
+            {
+                e.Cancel = true;
+                infoError.SetError(txtAuthor, "Tên tác giả không thể để trống");
             }
         }
 
@@ -160,11 +176,20 @@ namespace LibraryManager.ChildForm.BookManager
 
         private void txtYear_Validating(object sender, CancelEventArgs e)
         {
-            if (!ValidateHelper.validateInteger(txtYear.Text))
+            if (!ValidateHelper.validateInteger(txtYear.Text.Trim()))
             {
                 e.Cancel = true;
                 infoError.SetError(txtYear, "Năm xuất bản không thể chứa các chữ cái và kí tự đặc biệt");
+            } else if ((DateTime.Now.Year - int.Parse(txtYear.Text.Trim())) < 0) {
+                e.Cancel = true;
+                infoError.SetError(txtYear, "Năm xuất bản không thể ở tương lai");
             }
+            if (txtYear.Text.Trim().Length == 0)
+            {
+                e.Cancel= true;
+                infoError.SetError(txtYear, "Năm xuất bản không thể để trống");
+            }
+            
         }
 
         private void txtYear_Validated(object sender, EventArgs e)

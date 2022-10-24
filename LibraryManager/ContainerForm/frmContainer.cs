@@ -31,13 +31,14 @@ namespace LibraryManager
 
         private void frmContainer_Load(object sender, EventArgs e)
         {
-
+            txtName.Text = librarian.Name;
         }
         private void studentsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             CloseAllChildForm();
             StudentManager = new frmStudentManager();
             StudentManager.MdiParent = this;
+            StudentManager.Dock = DockStyle.Fill;
             StudentManager.Show();
         }
 

@@ -40,6 +40,7 @@
             this.btnUpdate = new System.Windows.Forms.Button();
             this.cboYear = new System.Windows.Forms.ComboBox();
             this.btnClear = new System.Windows.Forms.Button();
+            this.lbNotFound = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dvgData)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,7 +55,9 @@
             this.dvgData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dvgData.Location = new System.Drawing.Point(15, 97);
             this.dvgData.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dvgData.MultiSelect = false;
             this.dvgData.Name = "dvgData";
+            this.dvgData.ReadOnly = true;
             this.dvgData.RowHeadersVisible = false;
             this.dvgData.RowHeadersWidth = 51;
             this.dvgData.RowTemplate.Height = 29;
@@ -64,6 +67,7 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(327, 23);
             this.label1.Name = "label1";
@@ -73,6 +77,7 @@
             // 
             // txtTitle
             // 
+            this.txtTitle.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtTitle.Location = new System.Drawing.Point(415, 20);
             this.txtTitle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTitle.Name = "txtTitle";
@@ -82,6 +87,7 @@
             // 
             // cboCategory
             // 
+            this.cboCategory.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cboCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboCategory.FormattingEnabled = true;
             this.cboCategory.Location = new System.Drawing.Point(90, 60);
@@ -92,6 +98,7 @@
             // 
             // txtBookID
             // 
+            this.txtBookID.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtBookID.Location = new System.Drawing.Point(90, 20);
             this.txtBookID.Name = "txtBookID";
             this.txtBookID.Size = new System.Drawing.Size(124, 23);
@@ -100,6 +107,7 @@
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(15, 23);
             this.label2.Name = "label2";
@@ -109,6 +117,7 @@
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(15, 63);
             this.label3.Name = "label3";
@@ -118,6 +127,7 @@
             // 
             // label4
             // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(327, 63);
             this.label4.Name = "label4";
@@ -149,6 +159,7 @@
             // 
             // cboYear
             // 
+            this.cboYear.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cboYear.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboYear.FormattingEnabled = true;
             this.cboYear.Location = new System.Drawing.Point(415, 60);
@@ -159,7 +170,7 @@
             // 
             // btnClear
             // 
-            this.btnClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClear.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnClear.Location = new System.Drawing.Point(686, 23);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(162, 55);
@@ -168,12 +179,26 @@
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
+            // lbNotFound
+            // 
+            this.lbNotFound.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbNotFound.AutoSize = true;
+            this.lbNotFound.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.lbNotFound.Font = new System.Drawing.Font("Segoe UI Semibold", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbNotFound.Location = new System.Drawing.Point(105, 245);
+            this.lbNotFound.Name = "lbNotFound";
+            this.lbNotFound.Size = new System.Drawing.Size(470, 50);
+            this.lbNotFound.TabIndex = 9;
+            this.lbNotFound.Text = "Không có kết quả phù hợp";
+            this.lbNotFound.Visible = false;
+            // 
             // frmBookManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(869, 481);
             this.ControlBox = false;
+            this.Controls.Add(this.lbNotFound);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.cboYear);
             this.Controls.Add(this.btnUpdate);
@@ -212,5 +237,6 @@
         private Button btnUpdate;
         private ComboBox cboYear;
         private Button btnClear;
+        private Label lbNotFound;
     }
 }

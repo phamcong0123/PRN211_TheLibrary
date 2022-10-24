@@ -33,14 +33,15 @@ namespace LibraryManager.BookManager
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            frmUpdate addBook = new frmUpdate
+            frmUpdateBook addBook = new frmUpdateBook
             {
-                bookRepository = bookRepository,
+                BookRepository = bookRepository,
                 InsertOrUpdate = true
             };
             if (addBook.ShowDialog() == DialogResult.OK)
             {
                 LoadBookList(bookRepository.GetAllBooks());
+                LoadComboBoxFilter();
                 source.Position = source.Count - 1;
                 MessageBox.Show("Đã thêm thành công", "Quản lý thư viện - Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -49,16 +50,17 @@ namespace LibraryManager.BookManager
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             Book book = dvgData.CurrentRow.DataBoundItem as Book;
-            frmUpdate updateBook = new frmUpdate
+            frmUpdateBook updateBook = new frmUpdateBook
             {
-                bookRepository = bookRepository,
+                BookRepository = bookRepository,
                 InsertOrUpdate = false,
-                bookInfo = book
+                BookInfo = book
             };
             if (updateBook.ShowDialog() == DialogResult.OK)
             {
                 int pos = dvgData.CurrentRow.Index;
                 LoadBookList(bookRepository.GetAllBooks());
+                LoadComboBoxFilter();
                 source.Position = pos;
                 MessageBox.Show("Đã cập nhật thành công", "Quản lý thư viện - Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -124,7 +126,6 @@ namespace LibraryManager.BookManager
         }
         private void LoadComboBoxFilter()
         {
-            cboCategory.Items.Clear();
             ICategoryRepository categoryRepository = new CategoryRepository();
             List<Category> categories = categoryRepository.GetCategories().ToList();
             categories.Insert(0, new Category
@@ -145,10 +146,11 @@ namespace LibraryManager.BookManager
         private void filterBook()
         {
             var list = bookRepository.GetAllBooks();
-            if (txtBookID.Text.Length > 0) list = list.Where(book => book.BookID.ToString().Contains(txtBookID.Text));
-            if (txtTitle.Text.Length > 0) list = list.Where(book => book.Title.Contains(txtTitle.Text));
+            if (txtBookID.Text.Length > 0) list = list.Where(book => book.BookID.ToString().StartsWith(txtBookID.Text.Trim()));
+            if (txtTitle.Text.Length > 0) list = list.Where(book => book.Title.ToLower().Contains(txtTitle.Text.ToLower().Trim()));
             if (cboCategory.SelectedIndex > 0) list = list.Where(book => book.Category.CategoryID == (int)cboCategory.SelectedValue);
             if (cboYear.SelectedIndex > 0) list = list.Where(book => book.PublishYear == cboYear.SelectedItem.ToString());
+            if (list.Count() == 0) lbNotFound.Visible = true; else lbNotFound.Visible = false;
             LoadBookList(list);
         }
 

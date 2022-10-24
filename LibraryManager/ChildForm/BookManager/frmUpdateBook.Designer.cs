@@ -1,6 +1,6 @@
 ﻿namespace LibraryManager.ChildForm.BookManager
 {
-    partial class frmUpdate
+    partial class frmUpdateBook
     {
         /// <summary>
         /// Required designer variable.
@@ -37,11 +37,9 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.labelPrice = new System.Windows.Forms.Label();
-            this.txtBookID = new System.Windows.Forms.TextBox();
             this.txtTitle = new System.Windows.Forms.TextBox();
             this.txtPrinter = new System.Windows.Forms.TextBox();
             this.txtAuthor = new System.Windows.Forms.TextBox();
-            this.txtYear = new System.Windows.Forms.TextBox();
             this.txtQuantity = new System.Windows.Forms.TextBox();
             this.txtPrice = new System.Windows.Forms.TextBox();
             this.cboCategory = new System.Windows.Forms.ComboBox();
@@ -50,6 +48,8 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.infoError = new System.Windows.Forms.ErrorProvider(this.components);
+            this.txtBookID = new System.Windows.Forms.Label();
+            this.txtYear = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.infoError)).BeginInit();
             this.SuspendLayout();
             // 
@@ -125,17 +125,10 @@
             this.labelPrice.TabIndex = 7;
             this.labelPrice.Text = "Giá";
             // 
-            // txtBookID
-            // 
-            this.txtBookID.Enabled = false;
-            this.txtBookID.Location = new System.Drawing.Point(132, 16);
-            this.txtBookID.Name = "txtBookID";
-            this.txtBookID.Size = new System.Drawing.Size(100, 23);
-            this.txtBookID.TabIndex = 8;
-            // 
             // txtTitle
             // 
             this.txtTitle.Location = new System.Drawing.Point(132, 59);
+            this.txtTitle.MaxLength = 30;
             this.txtTitle.Name = "txtTitle";
             this.txtTitle.Size = new System.Drawing.Size(187, 23);
             this.txtTitle.TabIndex = 9;
@@ -146,6 +139,7 @@
             // txtPrinter
             // 
             this.txtPrinter.Location = new System.Drawing.Point(132, 146);
+            this.txtPrinter.MaxLength = 50;
             this.txtPrinter.Name = "txtPrinter";
             this.txtPrinter.Size = new System.Drawing.Size(187, 23);
             this.txtPrinter.TabIndex = 10;
@@ -156,23 +150,13 @@
             // txtAuthor
             // 
             this.txtAuthor.Location = new System.Drawing.Point(509, 16);
+            this.txtAuthor.MaxLength = 20;
             this.txtAuthor.Name = "txtAuthor";
             this.txtAuthor.Size = new System.Drawing.Size(170, 23);
             this.txtAuthor.TabIndex = 11;
             this.txtAuthor.TextChanged += new System.EventHandler(this.txtAuthor_TextChanged);
             this.txtAuthor.Validating += new System.ComponentModel.CancelEventHandler(this.txtAuthor_Validating);
             this.txtAuthor.Validated += new System.EventHandler(this.txtAuthor_Validated);
-            // 
-            // txtYear
-            // 
-            this.txtYear.Location = new System.Drawing.Point(509, 59);
-            this.txtYear.MaxLength = 4;
-            this.txtYear.Name = "txtYear";
-            this.txtYear.Size = new System.Drawing.Size(100, 23);
-            this.txtYear.TabIndex = 12;
-            this.txtYear.TextChanged += new System.EventHandler(this.txtYear_TextChanged);
-            this.txtYear.Validating += new System.ComponentModel.CancelEventHandler(this.txtYear_Validating);
-            this.txtYear.Validated += new System.EventHandler(this.txtYear_Validated);
             // 
             // txtQuantity
             // 
@@ -252,13 +236,35 @@
             this.infoError.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.infoError.ContainerControl = this;
             // 
-            // frmUpdate
+            // txtBookID
+            // 
+            this.txtBookID.AutoSize = true;
+            this.txtBookID.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.txtBookID.Location = new System.Drawing.Point(132, 19);
+            this.txtBookID.Name = "txtBookID";
+            this.txtBookID.Size = new System.Drawing.Size(31, 15);
+            this.txtBookID.TabIndex = 20;
+            this.txtBookID.Text = "xxxx";
+            // 
+            // txtYear
+            // 
+            this.txtYear.Location = new System.Drawing.Point(509, 59);
+            this.txtYear.Name = "txtYear";
+            this.txtYear.Size = new System.Drawing.Size(100, 23);
+            this.txtYear.TabIndex = 12;
+            this.txtYear.TextChanged += new System.EventHandler(this.txtYear_TextChanged);
+            this.txtYear.Validating += new System.ComponentModel.CancelEventHandler(this.txtYear_Validating);
+            this.txtYear.Validated += new System.EventHandler(this.txtYear_Validated);
+            // 
+            // frmUpdateBook
             // 
             this.AcceptButton = this.btnConfirm;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.ClientSize = new System.Drawing.Size(726, 310);
+            this.Controls.Add(this.txtYear);
+            this.Controls.Add(this.txtBookID);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnReset);
@@ -266,11 +272,9 @@
             this.Controls.Add(this.cboCategory);
             this.Controls.Add(this.txtPrice);
             this.Controls.Add(this.txtQuantity);
-            this.Controls.Add(this.txtYear);
             this.Controls.Add(this.txtAuthor);
             this.Controls.Add(this.txtPrinter);
             this.Controls.Add(this.txtTitle);
-            this.Controls.Add(this.txtBookID);
             this.Controls.Add(this.labelPrice);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -282,7 +286,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "frmUpdate";
+            this.Name = "frmUpdateBook";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý thư viện - Thêm sách mới";
             this.Load += new System.EventHandler(this.frmUpdate_Load);
@@ -302,11 +306,9 @@
         private Label label6;
         private Label label7;
         private Label labelPrice;
-        private TextBox txtBookID;
         private TextBox txtTitle;
         private TextBox txtPrinter;
         private TextBox txtAuthor;
-        private TextBox txtYear;
         private TextBox txtQuantity;
         private TextBox txtPrice;
         private ComboBox cboCategory;
@@ -315,5 +317,7 @@
         private Button btnCancel;
         private Label label8;
         private ErrorProvider infoError;
+        private Label txtBookID;
+        private TextBox txtYear;
     }
 }
