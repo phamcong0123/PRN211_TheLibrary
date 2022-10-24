@@ -53,7 +53,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dvgData.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dvgData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dvgData.Location = new System.Drawing.Point(15, 97);
+            this.dvgData.Location = new System.Drawing.Point(30, 97);
             this.dvgData.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dvgData.MultiSelect = false;
             this.dvgData.Name = "dvgData";
@@ -62,14 +62,14 @@
             this.dvgData.RowHeadersWidth = 51;
             this.dvgData.RowTemplate.Height = 29;
             this.dvgData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dvgData.Size = new System.Drawing.Size(653, 373);
+            this.dvgData.Size = new System.Drawing.Size(638, 362);
             this.dvgData.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(327, 23);
+            this.label1.Location = new System.Drawing.Point(342, 18);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(42, 15);
             this.label1.TabIndex = 1;
@@ -78,7 +78,7 @@
             // txtTitle
             // 
             this.txtTitle.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtTitle.Location = new System.Drawing.Point(415, 20);
+            this.txtTitle.Location = new System.Drawing.Point(430, 15);
             this.txtTitle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTitle.Name = "txtTitle";
             this.txtTitle.Size = new System.Drawing.Size(218, 23);
@@ -90,7 +90,7 @@
             this.cboCategory.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cboCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboCategory.FormattingEnabled = true;
-            this.cboCategory.Location = new System.Drawing.Point(90, 60);
+            this.cboCategory.Location = new System.Drawing.Point(105, 55);
             this.cboCategory.Name = "cboCategory";
             this.cboCategory.Size = new System.Drawing.Size(194, 23);
             this.cboCategory.TabIndex = 3;
@@ -99,7 +99,7 @@
             // txtBookID
             // 
             this.txtBookID.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtBookID.Location = new System.Drawing.Point(90, 20);
+            this.txtBookID.Location = new System.Drawing.Point(105, 15);
             this.txtBookID.Name = "txtBookID";
             this.txtBookID.Size = new System.Drawing.Size(124, 23);
             this.txtBookID.TabIndex = 1;
@@ -109,7 +109,7 @@
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(15, 23);
+            this.label2.Location = new System.Drawing.Point(30, 18);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(51, 15);
             this.label2.TabIndex = 6;
@@ -119,7 +119,7 @@
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(15, 63);
+            this.label3.Location = new System.Drawing.Point(30, 58);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(48, 15);
             this.label3.TabIndex = 7;
@@ -129,7 +129,7 @@
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(327, 63);
+            this.label4.Location = new System.Drawing.Point(342, 58);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(82, 15);
             this.label4.TabIndex = 8;
@@ -162,7 +162,7 @@
             this.cboYear.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cboYear.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboYear.FormattingEnabled = true;
-            this.cboYear.Location = new System.Drawing.Point(415, 60);
+            this.cboYear.Location = new System.Drawing.Point(430, 55);
             this.cboYear.Name = "cboYear";
             this.cboYear.Size = new System.Drawing.Size(123, 23);
             this.cboYear.TabIndex = 4;
