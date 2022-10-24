@@ -21,10 +21,10 @@ namespace LibraryManager
         {
             InitializeComponent();
         }
-        frmStudentManager? StudentManager;
-        frmBookManager? BookManager;
-        frmLendingManager? LendingManager;
-        frmInfo? InfoManager;
+        frmStudentManager StudentManager = new frmStudentManager();
+        frmBookManager BookManager = new frmBookManager();
+        frmLendingManager LendingManager = new frmLendingManager();
+        frmInfo InfoManager = new frmInfo();
         Librarian librarian;
 
         public Librarian Librarian { get => librarian; set => librarian = value; }
@@ -35,8 +35,7 @@ namespace LibraryManager
         }
         private void studentsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CloseAllChildForm();
-            StudentManager = new frmStudentManager();
+            HideAllChildForm();
             StudentManager.MdiParent = this;
             StudentManager.Dock = DockStyle.Fill;
             StudentManager.Show();
@@ -44,8 +43,7 @@ namespace LibraryManager
 
         private void booksToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CloseAllChildForm();
-            BookManager = new frmBookManager();
+            HideAllChildForm();
             BookManager.MdiParent = this;
             BookManager.Dock = DockStyle.Fill;
             BookManager.Show();
@@ -53,26 +51,22 @@ namespace LibraryManager
 
         private void lendToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CloseAllChildForm();
-            LendingManager = new frmLendingManager();
+            HideAllChildForm();
             LendingManager.MdiParent = this;
             LendingManager.Show();
         }
-        private void CloseAllChildForm()
+        private void HideAllChildForm()
         {
-            if (StudentManager != null) StudentManager.Close();
-            if (BookManager != null) BookManager.Close();
-            if (LendingManager != null) LendingManager.Close();
-            if (InfoManager != null) InfoManager.Close();
+            StudentManager.Hide();
+            BookManager.Hide();
+            LendingManager.Hide();
+            InfoManager.Hide();
         }
 
         private void thayDToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CloseAllChildForm();
-            InfoManager = new frmInfo
-            {
-                Librarian = librarian
-            };
+            HideAllChildForm();
+            InfoManager.Librarian = librarian;
             InfoManager.MdiParent = this;
             InfoManager.Dock = DockStyle.Fill;
             InfoManager.Show();
