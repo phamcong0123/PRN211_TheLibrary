@@ -26,7 +26,7 @@ namespace LibraryManager.ChildForm.Personal_Info
 
         private void frmInfo_Load(object sender, EventArgs e)
         {
-            txtLibrarianID.Text = librarian.LibrarianID.ToString();
+            lbLibrarianID.Text = librarian.LibrarianID.ToString();
             txtName.Text = librarian.Name;
             txtUsername.Text = librarian.Username;
         }
@@ -44,7 +44,8 @@ namespace LibraryManager.ChildForm.Personal_Info
         {
             checkAllFieldValid();
         }
-        private void checkAllFieldValid() {
+        private void checkAllFieldValid()
+        {
             bool enabled = true;
             if (!ValidateHelper.validateVietnamese(txtName.Text)) enabled = false;
             int length = txtPassword.Text.Length;

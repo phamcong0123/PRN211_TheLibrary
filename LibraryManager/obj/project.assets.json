@@ -3023,11 +3023,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\NameIsDuy\\Desktop\\PRN Project\\PRN211_GroupProject_LibraryManager\\LibraryManager\\LibraryManager.csproj",
+      "projectUniqueName": "C:\\Users\\NameIsDuy\\Desktop\\PRN Project\\v fixing\\PRN211_GroupProject_LibraryManager\\LibraryManager\\LibraryManager.csproj",
       "projectName": "LibraryManager",
-      "projectPath": "C:\\Users\\NameIsDuy\\Desktop\\PRN Project\\PRN211_GroupProject_LibraryManager\\LibraryManager\\LibraryManager.csproj",
+      "projectPath": "C:\\Users\\NameIsDuy\\Desktop\\PRN Project\\v fixing\\PRN211_GroupProject_LibraryManager\\LibraryManager\\LibraryManager.csproj",
       "packagesPath": "C:\\Users\\NameIsDuy\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\NameIsDuy\\Desktop\\PRN Project\\PRN211_GroupProject_LibraryManager\\LibraryManager\\obj\\",
+      "outputPath": "C:\\Users\\NameIsDuy\\Desktop\\PRN Project\\v fixing\\PRN211_GroupProject_LibraryManager\\LibraryManager\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "D:\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -3049,11 +3049,11 @@
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "projectReferences": {
-            "C:\\Users\\NameIsDuy\\Desktop\\PRN Project\\PRN211_GroupProject_LibraryManager\\BusinessObject\\BusinessObject.csproj": {
-              "projectPath": "C:\\Users\\NameIsDuy\\Desktop\\PRN Project\\PRN211_GroupProject_LibraryManager\\BusinessObject\\BusinessObject.csproj"
+            "C:\\Users\\NameIsDuy\\Desktop\\PRN Project\\v fixing\\PRN211_GroupProject_LibraryManager\\BusinessObject\\BusinessObject.csproj": {
+              "projectPath": "C:\\Users\\NameIsDuy\\Desktop\\PRN Project\\v fixing\\PRN211_GroupProject_LibraryManager\\BusinessObject\\BusinessObject.csproj"
             },
-            "C:\\Users\\NameIsDuy\\Desktop\\PRN Project\\PRN211_GroupProject_LibraryManager\\DataAccess\\DataAccess.csproj": {
-              "projectPath": "C:\\Users\\NameIsDuy\\Desktop\\PRN Project\\PRN211_GroupProject_LibraryManager\\DataAccess\\DataAccess.csproj"
+            "C:\\Users\\NameIsDuy\\Desktop\\PRN Project\\v fixing\\PRN211_GroupProject_LibraryManager\\DataAccess\\DataAccess.csproj": {
+              "projectPath": "C:\\Users\\NameIsDuy\\Desktop\\PRN Project\\v fixing\\PRN211_GroupProject_LibraryManager\\DataAccess\\DataAccess.csproj"
             }
           }
         }

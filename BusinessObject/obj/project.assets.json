@@ -8,23 +8,23 @@
     "net6.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Admin\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\NameIsDuy\\.nuget\\packages\\": {},
+    "D:\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\CN5\\PRN211\\Testing\\GroupProject\\BusinessObject\\BusinessObject.csproj",
+      "projectUniqueName": "C:\\Users\\NameIsDuy\\Desktop\\PRN Project\\v fixing\\PRN211_GroupProject_LibraryManager\\BusinessObject\\BusinessObject.csproj",
       "projectName": "BusinessObject",
-      "projectPath": "D:\\CN5\\PRN211\\Testing\\GroupProject\\BusinessObject\\BusinessObject.csproj",
-      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "D:\\CN5\\PRN211\\Testing\\GroupProject\\BusinessObject\\obj\\",
+      "projectPath": "C:\\Users\\NameIsDuy\\Desktop\\PRN Project\\v fixing\\PRN211_GroupProject_LibraryManager\\BusinessObject\\BusinessObject.csproj",
+      "packagesPath": "C:\\Users\\NameIsDuy\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\NameIsDuy\\Desktop\\PRN Project\\v fixing\\PRN211_GroupProject_LibraryManager\\BusinessObject\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        "D:\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\NameIsDuy\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -67,7 +67,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
       }
     }
   }

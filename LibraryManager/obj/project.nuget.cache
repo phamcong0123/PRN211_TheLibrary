@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "VytJKN1TUL62TrXdGAXn0dwfSfU0hv3aWIYVdyhHfPlqatHZUF+52jAG01so9ekAqI7q8966jxVV5/fGfgR03w==",
+  "dgSpecHash": "RXpzKawQVmeqhyREocelKJLIgT0WNxjdSvmu4o1ZNO2sXq8Err5AB10VTN5Zj4sKiz3UiXQU6dYMy6kpJwDI5w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\NameIsDuy\\Desktop\\PRN Project\\PRN211_GroupProject_LibraryManager\\LibraryManager\\LibraryManager.csproj",
+  "projectFilePath": "C:\\Users\\NameIsDuy\\Desktop\\PRN Project\\v fixing\\PRN211_GroupProject_LibraryManager\\LibraryManager\\LibraryManager.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\NameIsDuy\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\NameIsDuy\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
