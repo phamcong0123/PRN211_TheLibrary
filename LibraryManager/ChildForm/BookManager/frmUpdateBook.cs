@@ -38,7 +38,6 @@ namespace LibraryManager.ChildForm.BookManager
                 txtPrice.Text = StringFormat.ConvertToVNDString(BookInfo.Price);
                 txtAuthor.Text = BookInfo.Author;
                 txtYear.Text = BookInfo.PublishYear;
-                cboCategory.SelectedValue = BookInfo.Category.CategoryID;
                 btnConfirm.Text = "Cập nhật";
             }
             LoadComboBoxFilter();
@@ -253,6 +252,7 @@ namespace LibraryManager.ChildForm.BookManager
             cboCategory.DisplayMember = "categoryTitle";
             cboCategory.ValueMember = "categoryID";
             cboCategory.SelectedIndex = 0;
+            if (!InsertOrUpdate) cboCategory.SelectedValue = BookInfo.Category.CategoryID;
         }
         private void validateBookInfo()
         {
