@@ -6,10 +6,12 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using StringFormat = LibraryManager.Utils.StringFormat;
 
 namespace LibraryManager.ChildForm.StudentManager
 {
@@ -25,6 +27,7 @@ namespace LibraryManager.ChildForm.StudentManager
         private void frmUpdateStudent_Load(object sender, EventArgs e)
         {
             dobPicker.MaxDate = DateTime.Now;
+            txtDebt.Text = string.Format(new CultureInfo("vi-VN"), "{0:c}", 0);
             if (!InsertOrUpdate)
             {
                 this.Text = "Quản lý thư viện - Cập nhật thẻ thư viện";
@@ -33,6 +36,8 @@ namespace LibraryManager.ChildForm.StudentManager
                 lbStudentID.Text = StudentInfo.StudentID.ToString();
                 txtName.Text = StudentInfo.Name;
                 dobPicker.Value = StudentInfo.DOB;
+                txtDebt.Text = StringFormat.ConvertToVNDString(StudentInfo.Debt);
+                txtDebt.Enabled = true;
                 btnConfirm.Text = "Cập nhật";
             }
         }
@@ -79,6 +84,7 @@ namespace LibraryManager.ChildForm.StudentManager
                 StudentInfo.Name = txtName.Text.Trim();
                 StudentInfo.Gender = isMale;
                 StudentInfo.DOB = dobPicker.Value;
+                StudentInfo.Debt = StringFormat.ConvertToVND(txtDebt.Text);
                 StudentRepository.UpdateStudent(StudentInfo);
             }                      
         }
@@ -88,6 +94,7 @@ namespace LibraryManager.ChildForm.StudentManager
             txtName.Clear();
             radioMale.Checked = true;
             dobPicker.Value = DateTime.Now;
+            txtDebt.Clear();
         }
         private void btnCancel_Click(object sender, EventArgs e)
         {
@@ -140,13 +147,41 @@ namespace LibraryManager.ChildForm.StudentManager
         {
             infoError.SetError(dobPicker, "");
         }
+        private void txtDebt_Enter(object sender, EventArgs e)
+        {
+            txtDebt.Text = txtDebt.Text.Replace(" ₫", "").Replace(" ","").Trim();
+        }
+        private void txtDebt_TextChanged(object sender, EventArgs e)
+        {
+            validateStudentInfo();
+        }
         private void validateStudentInfo()
         {
             bool enabled = true;
             if (!ValidateHelper.validateInteger(txtStudentID.Text.Trim()) && InsertOrUpdate) enabled = false;
             if (!ValidateHelper.validateVietnamese(txtName.Text.Trim())) enabled = false;
             if ((DateTime.Now.Year - dobPicker.Value.Year) < 6) enabled = false;
+            if (!ValidateHelper.validateDecimal(StringFormat.ConvertToVND(txtDebt.Text).ToString()))
+            {
+                enabled = false;
+            }
             btnConfirm.Enabled = enabled;
-        }        
+        }
+
+        private void txtDebt_Validating(object sender, CancelEventArgs e)
+        {
+            if (!ValidateHelper.validateDecimal(txtDebt.Text.Trim()))
+            {
+                e.Cancel = true;
+                infoError.SetError(txtDebt, "Định dạng số không thích hợp");
+            }
+        }
+
+        private void txtDebt_Validated(object sender, EventArgs e)
+        {
+            Double newDebt = StringFormat.ConvertToVND(txtDebt.Text);
+            txtDebt.Text = StringFormat.ConvertToVNDString(newDebt);           
+            infoError.SetError(txtDebt, "");
+        }
     }
 }

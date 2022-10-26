@@ -44,6 +44,8 @@
             this.lbStudentID = new System.Windows.Forms.Label();
             this.infoError = new System.Windows.Forms.ErrorProvider(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtDebt = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.infoError)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -149,7 +151,7 @@
             // 
             this.btnConfirm.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnConfirm.Enabled = false;
-            this.btnConfirm.Location = new System.Drawing.Point(357, 286);
+            this.btnConfirm.Location = new System.Drawing.Point(358, 306);
             this.btnConfirm.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.Size = new System.Drawing.Size(94, 57);
@@ -160,7 +162,7 @@
             // 
             // btnReset
             // 
-            this.btnReset.Location = new System.Drawing.Point(484, 286);
+            this.btnReset.Location = new System.Drawing.Point(485, 306);
             this.btnReset.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(94, 57);
@@ -171,7 +173,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(609, 286);
+            this.btnCancel.Location = new System.Drawing.Point(610, 306);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(94, 57);
@@ -199,12 +201,33 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::LibraryManager.Properties.Resources.student;
-            this.pictureBox1.Location = new System.Drawing.Point(28, 26);
+            this.pictureBox1.Location = new System.Drawing.Point(22, 17);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(297, 325);
+            this.pictureBox1.Size = new System.Drawing.Size(297, 347);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(358, 261);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(50, 20);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "Dư nợ";
+            // 
+            // txtDebt
+            // 
+            this.txtDebt.Enabled = false;
+            this.txtDebt.Location = new System.Drawing.Point(474, 258);
+            this.txtDebt.Name = "txtDebt";
+            this.txtDebt.Size = new System.Drawing.Size(114, 27);
+            this.txtDebt.TabIndex = 14;
+            this.txtDebt.TextChanged += new System.EventHandler(this.txtDebt_TextChanged);
+            this.txtDebt.Enter += new System.EventHandler(this.txtDebt_Enter);
+            this.txtDebt.Validating += new System.ComponentModel.CancelEventHandler(this.txtDebt_Validating);
+            this.txtDebt.Validated += new System.EventHandler(this.txtDebt_Validated);
             // 
             // frmUpdateStudent
             // 
@@ -213,6 +236,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.ClientSize = new System.Drawing.Size(735, 376);
+            this.Controls.Add(this.txtDebt);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lbStudentID);
             this.Controls.Add(this.btnCancel);
@@ -259,5 +284,7 @@
         private Label lbStudentID;
         private ErrorProvider infoError;
         private PictureBox pictureBox1;
+        private TextBox txtDebt;
+        private Label label4;
     }
 }

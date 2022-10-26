@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
+using StringFormat = LibraryManager.Utils.StringFormat;
 
 namespace LibraryManager.ChildForm.BookManager
 {
@@ -25,7 +26,8 @@ namespace LibraryManager.ChildForm.BookManager
         internal Book BookInfo;       
         private void frmUpdate_Load(object sender, EventArgs e)
         {
-            LoadComboBoxFilter();        
+            txtBookID.Text = BookRepository.GetNewProperBookID().ToString();
+            txtPrice.Text = StringFormat.ConvertToVNDString(0);
             if (!InsertOrUpdate)
             {
                 this.Text = "Quản lý thư viện - Cập nhật thông tin sách";
@@ -33,15 +35,13 @@ namespace LibraryManager.ChildForm.BookManager
                 txtTitle.Text = BookInfo.Title;
                 txtPrinter.Text = BookInfo.Printer;
                 txtQuantity.Text = BookInfo.Quantity.ToString();
-                txtPrice.Text = BookInfo.Price.ToString();
+                txtPrice.Text = StringFormat.ConvertToVNDString(BookInfo.Price);
                 txtAuthor.Text = BookInfo.Author;
                 txtYear.Text = BookInfo.PublishYear;
                 cboCategory.SelectedValue = BookInfo.Category.CategoryID;
                 btnConfirm.Text = "Cập nhật";
-            } else
-            {
-                txtBookID.Text = BookRepository.GetNewProperBookID().ToString();
             }
+            LoadComboBoxFilter();
         }
         private void btnConfirm_Click(object sender, EventArgs e)
         {
@@ -51,7 +51,7 @@ namespace LibraryManager.ChildForm.BookManager
                 BookID = int.Parse(txtBookID.Text),
                 Title = txtTitle.Text,
                 Category = (Category)cboCategory.SelectedItem,
-                Price = Double.Parse(txtPrice.Text),
+                Price = StringFormat.ConvertToVND(txtPrice.Text),
                 Printer = txtPrinter.Text,
                 PublishYear = txtYear.Text,
                 Quantity = int.Parse(txtQuantity.Text)
@@ -213,7 +213,7 @@ namespace LibraryManager.ChildForm.BookManager
 
         private void txtPrice_Validating(object sender, CancelEventArgs e)
         {
-            if (!ValidateHelper.validateDecimal(txtPrice.Text))
+            if (!ValidateHelper.validateDecimal(StringFormat.ConvertToVND(txtPrice.Text).ToString()))
             {
                 e.Cancel = true;
                 infoError.SetError(txtPrice, "Giá tiền không thể chứa các chữ số và ký tự đặc biệt");
@@ -222,6 +222,8 @@ namespace LibraryManager.ChildForm.BookManager
 
         private void txtPrice_Validated(object sender, EventArgs e)
         {
+            Double price = StringFormat.ConvertToVND(txtPrice.Text);
+            txtPrice.Text = StringFormat.ConvertToVNDString(price);
             infoError.SetError(txtPrice, "");
         }
         private void cboCategory_Validating(object sender, CancelEventArgs e)
@@ -258,11 +260,16 @@ namespace LibraryManager.ChildForm.BookManager
             if (!ValidateHelper.validateVietnameseWithNum(txtTitle.Text)) enabled = false;
             if (!ValidateHelper.validateVietnamese(txtPrinter.Text)) enabled = false;
             if (!ValidateHelper.validateVietnamese(txtAuthor.Text)) enabled = false;
-            if (!ValidateHelper.validateDecimal(txtPrice.Text)) enabled = false;
+            if (!ValidateHelper.validateDecimal(StringFormat.ConvertToVND(txtPrice.Text).ToString())) enabled = false;
             if (!ValidateHelper.validateInteger(txtYear.Text)) enabled = false;
             if (!ValidateHelper.validateInteger(txtQuantity.Text)) enabled = false;
             if (cboCategory.SelectedIndex == 0) enabled = false;
             btnConfirm.Enabled = enabled;
-        }      
+        }
+
+        private void txtPrice_Enter(object sender, EventArgs e)
+        {
+            txtPrice.Text = txtPrice.Text.Replace(" ", "").Replace("₫", "");
+        }
     }
 }

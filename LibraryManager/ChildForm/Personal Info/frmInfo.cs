@@ -49,6 +49,7 @@ namespace LibraryManager.ChildForm.Personal_Info
             if (!ValidateHelper.validateVietnamese(txtName.Text)) enabled = false;
             int length = txtPassword.Text.Length;
             if (length > 0 && length < 6) enabled = false;
+            if (txtConfirm.Text != txtPassword.Text) enabled = false;
             btnSave.Enabled = enabled;
         }
         private void txtName_Validated(object sender, EventArgs e)
@@ -81,6 +82,25 @@ namespace LibraryManager.ChildForm.Personal_Info
         private void txtPassword_TextChanged(object sender, EventArgs e)
         {
             checkAllFieldValid();
+        }
+
+        private void txtConfirm_TextChanged(object sender, EventArgs e)
+        {
+            checkAllFieldValid();
+        }
+
+        private void txtConfirm_Validated(object sender, EventArgs e)
+        {
+            infoError.SetError(txtConfirm, "");
+        }
+
+        private void txtConfirm_Validating(object sender, CancelEventArgs e)
+        {
+            if (txtConfirm.Text != txtPassword.Text)
+            {
+                e.Cancel = true;
+                infoError.SetError(txtConfirm, "Không trùng khớp với mật khẩu mới");
+            }
         }
     }
 }

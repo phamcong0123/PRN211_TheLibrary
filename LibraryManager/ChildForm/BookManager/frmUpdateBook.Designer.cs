@@ -46,7 +46,6 @@
             this.btnConfirm = new System.Windows.Forms.Button();
             this.btnReset = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
             this.infoError = new System.Windows.Forms.ErrorProvider(this.components);
             this.txtBookID = new System.Windows.Forms.Label();
             this.txtYear = new System.Windows.Forms.TextBox();
@@ -182,6 +181,7 @@
             this.txtPrice.Size = new System.Drawing.Size(135, 27);
             this.txtPrice.TabIndex = 14;
             this.txtPrice.TextChanged += new System.EventHandler(this.txtPrice_TextChanged);
+            this.txtPrice.Enter += new System.EventHandler(this.txtPrice_Enter);
             this.txtPrice.Validating += new System.ComponentModel.CancelEventHandler(this.txtPrice_Validating);
             this.txtPrice.Validated += new System.EventHandler(this.txtPrice_Validated);
             // 
@@ -233,15 +233,6 @@
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(725, 199);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(18, 20);
-            this.label8.TabIndex = 19;
-            this.label8.Text = "₫";
-            // 
             // infoError
             // 
             this.infoError.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
@@ -288,7 +279,6 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txtYear);
             this.Controls.Add(this.txtBookID);
-            this.Controls.Add(this.label8);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnReset);
             this.Controls.Add(this.btnConfirm);
@@ -340,7 +330,6 @@
         private Button btnConfirm;
         private Button btnReset;
         private Button btnCancel;
-        private Label label8;
         private ErrorProvider infoError;
         private Label txtBookID;
         private TextBox txtYear;

@@ -16,6 +16,9 @@
     <Compile Update="ChildForm\StudentManager\frmStudentManager.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="ChildForm\StudentManager\frmUpdateDebt.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="ChildForm\StudentManager\frmUpdateStudent.cs">
       <SubType>Form</SubType>
     </Compile>

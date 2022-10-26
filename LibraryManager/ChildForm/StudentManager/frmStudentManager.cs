@@ -61,6 +61,10 @@ namespace LibraryManager.StudentManager
                 MessageBox.Show("Đã cập nhật thẻ thư viện", "Quản lý thư viện - Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+        private void btnUpdateDebt_Click(object sender, EventArgs e)
+        {
+            Student student = dvgData.CurrentRow.DataBoundItem as Student;
+        }
         private void txtStudentID_TextChanged(object sender, EventArgs e)
         {
             filterStudent();
@@ -92,7 +96,9 @@ namespace LibraryManager.StudentManager
                 dvgData.Columns[4].DefaultCellStyle.Format = "dd-MM-yyyy";
                 dvgData.Columns[5].HeaderText = "Dư nợ";
                 dvgData.Columns[5].DefaultCellStyle.Format = "c";
-                dvgData.Columns[5].DefaultCellStyle.FormatProvider = CultureInfo.GetCultureInfo("vi-VN");
+                CultureInfo VNstyle = new CultureInfo("vi-VN");
+                VNstyle.NumberFormat.CurrencyGroupSeparator = " ";
+                dvgData.Columns[5].DefaultCellStyle.FormatProvider = VNstyle;
                 if (list.Count() == 0)
                 {
                     btnUpdate.Enabled = false;
@@ -125,5 +131,7 @@ namespace LibraryManager.StudentManager
             if (list.Count() == 0) lbNotFound.Visible = true; else lbNotFound.Visible = false;
             LoadStudentList(list);
         }
+
+        
     }
 }

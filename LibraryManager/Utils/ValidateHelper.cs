@@ -21,7 +21,7 @@ namespace LibraryManager.Utils
         }
         public static bool validateDecimal(String num)
         {
-            String regex = @"^[0-9]+(\\.)?[0-9]*$";
+            String regex = @"^[0-9\s]+(\.)?[0-9]*$";
             return Regex.IsMatch(num, regex);
         }
         public static bool validateVietnameseWithNum(String s)

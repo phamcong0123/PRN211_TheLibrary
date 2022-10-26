@@ -60,3 +60,4 @@ D:\CN5\PRN211\Testing\GroupProject\LibraryManager\obj\Debug\net6.0-windows\Libra
 D:\CN5\PRN211\Testing\GroupProject\LibraryManager\obj\Debug\net6.0-windows\LibraryManager.ChildForm.BookManager.frmUpdateBook.resources
 D:\CN5\PRN211\Testing\GroupProject\LibraryManager\obj\Debug\net6.0-windows\LibraryManager.ChildForm.StudentManager.frmUpdateStudent.resources
 D:\CN5\PRN211\Testing\GroupProject\LibraryManager\obj\Debug\net6.0-windows\LibraryManager.Properties.Resources.resources
+D:\CN5\PRN211\Testing\GroupProject\LibraryManager\obj\Debug\net6.0-windows\LibraryManager.ChildForm.StudentManager.frmUpdateDebt.resources

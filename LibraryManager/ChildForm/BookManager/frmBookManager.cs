@@ -109,7 +109,9 @@ namespace LibraryManager.BookManager
                 dvgData.Columns[6].HeaderText = "Số lượng";
                 dvgData.Columns[7].HeaderText = "Giá";
                 dvgData.Columns[7].DefaultCellStyle.Format = "c";
-                dvgData.Columns[7].DefaultCellStyle.FormatProvider = CultureInfo.GetCultureInfo("vi-VN");
+                CultureInfo VNstyle = new CultureInfo("vi-VN");
+                VNstyle.NumberFormat.CurrencyGroupSeparator = " ";
+                dvgData.Columns[7].DefaultCellStyle.FormatProvider = VNstyle;
                 if (list.Count() == 0)
                 {
                     btnUpdate.Enabled = false;
