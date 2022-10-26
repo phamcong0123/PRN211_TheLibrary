@@ -26,7 +26,7 @@ namespace LibraryManager.ChildForm.Personal_Info
 
         private void frmInfo_Load(object sender, EventArgs e)
         {
-            lbLibrarianID.Text = librarian.LibrarianID.ToString();
+            txtLibrarianID.Text = librarian.LibrarianID.ToString();
             txtName.Text = librarian.Name;
             txtUsername.Text = librarian.Username;
         }

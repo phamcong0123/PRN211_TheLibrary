@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogin));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnLogin = new System.Windows.Forms.Button();
@@ -40,26 +39,27 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(50, 36);
+            this.label1.Location = new System.Drawing.Point(44, 27);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(107, 20);
+            this.label1.Size = new System.Drawing.Size(85, 15);
             this.label1.TabIndex = 0;
             this.label1.Text = "Tên đăng nhập";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(50, 96);
+            this.label2.Location = new System.Drawing.Point(44, 72);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(70, 20);
+            this.label2.Size = new System.Drawing.Size(57, 15);
             this.label2.TabIndex = 1;
             this.label2.Text = "Mật khẩu";
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(81, 160);
+            this.btnLogin.Location = new System.Drawing.Point(71, 120);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(94, 51);
+            this.btnLogin.Size = new System.Drawing.Size(82, 38);
             this.btnLogin.TabIndex = 3;
             this.btnLogin.Text = "Đăng nhập";
             this.btnLogin.UseVisualStyleBackColor = true;
@@ -67,9 +67,10 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(232, 160);
+            this.btnCancel.Location = new System.Drawing.Point(203, 120);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(94, 51);
+            this.btnCancel.Size = new System.Drawing.Size(82, 38);
             this.btnCancel.TabIndex = 4;
             this.btnCancel.Text = "Huỷ";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -77,25 +78,27 @@
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(175, 92);
+            this.txtPassword.Location = new System.Drawing.Point(153, 69);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(177, 27);
+            this.txtPassword.Size = new System.Drawing.Size(155, 23);
             this.txtPassword.TabIndex = 2;
             this.txtPassword.UseSystemPasswordChar = true;
             // 
             // txtUsername
             // 
-            this.txtUsername.Location = new System.Drawing.Point(175, 32);
+            this.txtUsername.Location = new System.Drawing.Point(153, 24);
+            this.txtUsername.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(177, 27);
+            this.txtUsername.Size = new System.Drawing.Size(155, 23);
             this.txtUsername.TabIndex = 1;
             // 
             // frmLogin
             // 
             this.AcceptButton = this.btnLogin;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(409, 225);
+            this.ClientSize = new System.Drawing.Size(358, 169);
             this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.btnCancel);
@@ -103,7 +106,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
