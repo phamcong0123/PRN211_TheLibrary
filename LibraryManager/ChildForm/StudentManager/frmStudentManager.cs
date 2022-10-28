@@ -128,10 +128,13 @@ namespace LibraryManager.StudentManager
             if (txtStudentID.Text.Length > 0) list = list.Where(student => student.StudentID.ToString().StartsWith(txtStudentID.Text.Trim()));
             if (txtName.Text.Length > 0) list = list.Where(student => student.Name.ToLower().Contains(txtName.Text.ToLower().Trim()));
             if (cboGeneration.SelectedIndex > 0) list = list.Where(student => student.Generation == cboGeneration.SelectedItem.ToString());
+            if (cbDebt.Checked) list = list.Where(student => student.Debt > 0);
             if (list.Count() == 0) lbNotFound.Visible = true; else lbNotFound.Visible = false;
             LoadStudentList(list);
         }
-
-        
+        private void cbDebt_CheckedChanged(object sender, EventArgs e)
+        {
+            filterStudent();
+        }
     }
 }

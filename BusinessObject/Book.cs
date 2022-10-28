@@ -20,5 +20,10 @@ namespace BusinessObject
         public string PublishYear { get; set; }
         public int Quantity { get; set; }
         public Double Price { get; set; }
+
+        public override string? ToString()
+        {
+            return "[#" + BookID.ToString() + "]" + "   " + Title;
+        }
     }
 }

@@ -7,7 +7,13 @@
     <Compile Update="ChildForm\BookManager\frmUpdateBook.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="ChildForm\Lending Manager\frmLendingBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="ChildForm\Lending Manager\frmLendingManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ChildForm\Lending Manager\frmReturnBookLending.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="ChildForm\Personal Info\frmInfo.cs">

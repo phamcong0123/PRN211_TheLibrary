@@ -33,7 +33,7 @@
             this.studentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.booksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lendToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.thayDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.infoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.txtName = new System.Windows.Forms.ToolStripLabel();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
@@ -49,7 +49,7 @@
             this.studentsToolStripMenuItem,
             this.booksToolStripMenuItem,
             this.lendToolStripMenuItem,
-            this.thayDToolStripMenuItem});
+            this.infoToolStripMenuItem});
             this.mainMenuStrip.Location = new System.Drawing.Point(0, 0);
             this.mainMenuStrip.Name = "mainMenuStrip";
             this.mainMenuStrip.Padding = new System.Windows.Forms.Padding(6, 7, 0, 7);
@@ -81,13 +81,13 @@
             this.lendToolStripMenuItem.Text = "Quản lý trả/mượn";
             this.lendToolStripMenuItem.Click += new System.EventHandler(this.lendToolStripMenuItem_Click);
             // 
-            // thayDToolStripMenuItem
+            // infoToolStripMenuItem
             // 
-            this.thayDToolStripMenuItem.Name = "thayDToolStripMenuItem";
-            this.thayDToolStripMenuItem.Padding = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.thayDToolStripMenuItem.Size = new System.Drawing.Size(157, 27);
-            this.thayDToolStripMenuItem.Text = "Cài đặt tài khoản";
-            this.thayDToolStripMenuItem.Click += new System.EventHandler(this.thayDToolStripMenuItem_Click);
+            this.infoToolStripMenuItem.Name = "infoToolStripMenuItem";
+            this.infoToolStripMenuItem.Padding = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.infoToolStripMenuItem.Size = new System.Drawing.Size(157, 27);
+            this.infoToolStripMenuItem.Text = "Cài đặt tài khoản";
+            this.infoToolStripMenuItem.Click += new System.EventHandler(this.thayDToolStripMenuItem_Click);
             // 
             // toolStrip1
             // 
@@ -127,6 +127,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.mainMenuStrip;
+            this.MinimumSize = new System.Drawing.Size(1066, 696);
             this.Name = "frmContainer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý thư viện";
@@ -147,7 +148,7 @@
         private ToolStripMenuItem studentsToolStripMenuItem;
         private ToolStripMenuItem booksToolStripMenuItem;
         private ToolStripMenuItem lendToolStripMenuItem;
-        private ToolStripMenuItem thayDToolStripMenuItem;
+        private ToolStripMenuItem infoToolStripMenuItem;
         private ToolStrip toolStrip1;
         private ToolStripLabel toolStripLabel2;
         private ToolStripLabel txtName;

@@ -155,6 +155,5 @@ namespace LibraryManager.BookManager
             if (list.Count() == 0) lbNotFound.Visible = true; else lbNotFound.Visible = false;
             LoadBookList(list);
         }
-
     }
 }

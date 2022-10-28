@@ -11,5 +11,6 @@ namespace DataAccess.Repository
     {
         public Librarian? GetLibrarian(string username, string password) => LibrarianDAO.Instance.CheckLogin(username, password);
         public void UpdateInfo(Librarian librarian) => LibrarianDAO.Instance.UpdateInfo(librarian);
+        public Librarian? GetLibrarianName(int librarianID) => LibrarianDAO.Instance.GetInfo(librarianID);
     }
 }

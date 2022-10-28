@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -14,5 +15,10 @@ namespace BusinessObject
         public bool Gender { get; set; }
         public DateTime DOB { get; set; }
         public Double Debt { get; set; }
+
+        public override string? ToString()
+        {
+            return "[" + StudentID.ToString() + "]" + "   " + Name; ;
+        }
     }
 }

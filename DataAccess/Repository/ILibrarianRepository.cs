@@ -11,5 +11,6 @@ namespace DataAccess.Repository
     {
         Librarian? GetLibrarian(string username, string password);
         void UpdateInfo(Librarian librarian);
+        Librarian? GetLibrarianName(int librarianID);
     }
 }

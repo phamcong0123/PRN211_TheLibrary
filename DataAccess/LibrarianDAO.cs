@@ -24,7 +24,36 @@ namespace DataAccess
                 }
                 return instance;
             }
-        }     
+        }
+        public Librarian? GetInfo(int librarianID)
+        {
+            Librarian? librarian = null;
+            IDataReader? dataReader = null;
+            string SQLSelect = "SELECT name FROM tblLibrarian WHERE librarianID = @librarianID ";
+            try
+            {
+                var param = dataProvider.CreateParameter("@librarianID", 4, librarianID, DbType.Int32);
+                dataReader = dataProvider.GetDataReader(SQLSelect, CommandType.Text, out connection, param);
+                if (dataReader.Read())
+                {
+                    librarian = new Librarian
+                    {
+                        LibrarianID = librarianID,
+                        Name = dataReader.GetString(0),
+                    };
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                if (dataReader != null) dataReader.Close();
+                CloseConnection();
+            }
+            return librarian;
+        }
         public Librarian? CheckLogin(String username, String password)
         {
             Librarian? librarian = null;

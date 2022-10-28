@@ -41,6 +41,7 @@
             this.lbLibrarianID = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.txtConfirm = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.infoError)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,7 +53,7 @@
             // txtName
             // 
             this.txtName.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtName.Location = new System.Drawing.Point(263, 126);
+            this.txtName.Location = new System.Drawing.Point(258, 241);
             this.txtName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(214, 27);
@@ -65,7 +66,7 @@
             // 
             this.txtUsername.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtUsername.Enabled = false;
-            this.txtUsername.Location = new System.Drawing.Point(263, 184);
+            this.txtUsername.Location = new System.Drawing.Point(258, 299);
             this.txtUsername.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(214, 27);
@@ -74,7 +75,7 @@
             // txtPassword
             // 
             this.txtPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtPassword.Location = new System.Drawing.Point(263, 240);
+            this.txtPassword.Location = new System.Drawing.Point(258, 355);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PlaceholderText = "Bỏ trống nếu không đổi mật khẩu";
@@ -89,7 +90,7 @@
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(113, 74);
+            this.label1.Location = new System.Drawing.Point(108, 189);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(49, 20);
             this.label1.TabIndex = 4;
@@ -99,7 +100,7 @@
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(113, 130);
+            this.label2.Location = new System.Drawing.Point(108, 245);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(73, 20);
             this.label2.TabIndex = 5;
@@ -109,7 +110,7 @@
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(113, 188);
+            this.label3.Location = new System.Drawing.Point(108, 303);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(107, 20);
             this.label3.TabIndex = 6;
@@ -119,7 +120,7 @@
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(113, 244);
+            this.label4.Location = new System.Drawing.Point(108, 359);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(100, 20);
             this.label4.TabIndex = 7;
@@ -129,7 +130,7 @@
             // 
             this.btnSave.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnSave.Enabled = false;
-            this.btnSave.Location = new System.Drawing.Point(229, 343);
+            this.btnSave.Location = new System.Drawing.Point(224, 458);
             this.btnSave.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(114, 52);
@@ -142,7 +143,7 @@
             // 
             this.lbLibrarianID.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbLibrarianID.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbLibrarianID.Location = new System.Drawing.Point(263, 74);
+            this.lbLibrarianID.Location = new System.Drawing.Point(258, 189);
             this.lbLibrarianID.Name = "lbLibrarianID";
             this.lbLibrarianID.Size = new System.Drawing.Size(214, 25);
             this.lbLibrarianID.TabIndex = 9;
@@ -153,7 +154,7 @@
             // 
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(113, 294);
+            this.label5.Location = new System.Drawing.Point(108, 409);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(134, 20);
             this.label5.TabIndex = 11;
@@ -162,7 +163,7 @@
             // txtConfirm
             // 
             this.txtConfirm.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtConfirm.Location = new System.Drawing.Point(263, 291);
+            this.txtConfirm.Location = new System.Drawing.Point(258, 406);
             this.txtConfirm.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtConfirm.Name = "txtConfirm";
             this.txtConfirm.PlaceholderText = "Bỏ trống nếu không đổi mật khẩu";
@@ -173,13 +174,25 @@
             this.txtConfirm.Validating += new System.ComponentModel.CancelEventHandler(this.txtConfirm_Validating);
             this.txtConfirm.Validated += new System.EventHandler(this.txtConfirm_Validated);
             // 
+            // label6
+            // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label6.Location = new System.Drawing.Point(152, 62);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(299, 50);
+            this.label6.TabIndex = 12;
+            this.label6.Text = "Cài đặt tài khoản";
+            // 
             // frmInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
-            this.ClientSize = new System.Drawing.Size(577, 421);
+            this.ClientSize = new System.Drawing.Size(577, 593);
             this.ControlBox = false;
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtConfirm);
             this.Controls.Add(this.lbLibrarianID);
@@ -217,5 +230,6 @@
         private Label label1;
         private Label label5;
         private TextBox txtConfirm;
+        private Label label6;
     }
 }

@@ -17,6 +17,7 @@ namespace LibraryManager.Utils
         }
         public static Double ConvertToVND(String VNDmoney)
         {
+            if (VNDmoney == "") return 0;
             return Double.Parse(VNDmoney.Replace(" ", "").Replace("₫", "").Trim());
         }
     }

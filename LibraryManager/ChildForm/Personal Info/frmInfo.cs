@@ -44,7 +44,8 @@ namespace LibraryManager.ChildForm.Personal_Info
         {
             checkAllFieldValid();
         }
-        private void checkAllFieldValid() {
+        private void checkAllFieldValid()
+        {
             bool enabled = true;
             if (!ValidateHelper.validateVietnamese(txtName.Text)) enabled = false;
             int length = txtPassword.Text.Length;

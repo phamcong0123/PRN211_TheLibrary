@@ -93,7 +93,7 @@ namespace LibraryManager.ChildForm.StudentManager
             txtStudentID.Clear();
             txtName.Clear();
             radioMale.Checked = true;
-            dobPicker.Value = DateTime.Now;
+            dobPicker.Value = dobPicker.MaxDate;
             txtDebt.Clear();
         }
         private void btnCancel_Click(object sender, EventArgs e)

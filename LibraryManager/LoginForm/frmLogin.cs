@@ -30,6 +30,7 @@ namespace LibraryManager
             }
             else
             {
+                txtPassword.Clear();
                 MessageBox.Show("Thông tin đăng nhập không chính xác !", "Quản lý thư viện - Đăng nhập", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }

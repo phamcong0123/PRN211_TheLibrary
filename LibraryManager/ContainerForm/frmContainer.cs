@@ -21,10 +21,10 @@ namespace LibraryManager
         {
             InitializeComponent();
         }
-        frmStudentManager StudentManager = new frmStudentManager();
-        frmBookManager BookManager = new frmBookManager();
-        frmLendingManager LendingManager = new frmLendingManager();
-        frmInfo InfoManager = new frmInfo();
+        frmStudentManager StudentManager;
+        frmBookManager BookManager;
+        frmLendingManager LendingManager;
+        frmInfo InfoManager;
         Librarian librarian;
 
         public Librarian Librarian { get => librarian; set => librarian = value; }
@@ -32,10 +32,14 @@ namespace LibraryManager
         private void frmContainer_Load(object sender, EventArgs e)
         {
             txtName.Text = librarian.Name;
+            studentsToolStripMenuItem_Click(null, null);
         }
         private void studentsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            HideAllChildForm();
+        {           
+            CloseAllChildForm();
+            studentsToolStripMenuItem.ForeColor = Color.White;
+            studentsToolStripMenuItem.BackColor = Color.Black;
+            StudentManager = new frmStudentManager();
             StudentManager.MdiParent = this;
             StudentManager.Dock = DockStyle.Fill;
             StudentManager.Show();
@@ -43,7 +47,10 @@ namespace LibraryManager
 
         private void booksToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            HideAllChildForm();
+            CloseAllChildForm();
+            booksToolStripMenuItem.ForeColor = Color.White;
+            booksToolStripMenuItem.BackColor = Color.Black;
+            BookManager = new frmBookManager();
             BookManager.MdiParent = this;
             BookManager.Dock = DockStyle.Fill;
             BookManager.Show();
@@ -51,22 +58,55 @@ namespace LibraryManager
 
         private void lendToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            HideAllChildForm();
+            CloseAllChildForm();
+            lendToolStripMenuItem.ForeColor = Color.White;
+            lendToolStripMenuItem.BackColor = Color.Black;
+            LendingManager = new frmLendingManager
+            {
+                Librarian = librarian
+            };         
             LendingManager.MdiParent = this;
+            LendingManager.Dock = DockStyle.Fill;
             LendingManager.Show();
         }
-        private void HideAllChildForm()
+        private void CloseAllChildForm()
         {
-            StudentManager.Hide();
-            BookManager.Hide();
-            LendingManager.Hide();
-            InfoManager.Hide();
+            if (StudentManager != null)
+            {
+                studentsToolStripMenuItem.BackColor = SystemColors.Control;
+                studentsToolStripMenuItem.ForeColor = SystemColors.ControlText;
+                StudentManager.Close();
+            }
+            if (BookManager != null)
+            {
+                booksToolStripMenuItem.BackColor = SystemColors.Control;
+                booksToolStripMenuItem.ForeColor = SystemColors.ControlText;
+                BookManager.Close();
+            }
+            if (LendingManager != null)
+            {
+                lendToolStripMenuItem.BackColor = SystemColors.Control;
+                lendToolStripMenuItem.ForeColor = SystemColors.ControlText;
+                LendingManager.Close();
+            }               
+            if (InfoManager != null)
+            {
+                infoToolStripMenuItem.BackColor = SystemColors.Control;
+                infoToolStripMenuItem.ForeColor = SystemColors.ControlText;
+                InfoManager.Close();
+            }
+           
         }
 
         private void thayDToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            HideAllChildForm();
-            InfoManager.Librarian = librarian;
+            CloseAllChildForm();
+            infoToolStripMenuItem.ForeColor = Color.White;
+            infoToolStripMenuItem.BackColor = Color.Black;
+            InfoManager = new frmInfo
+            {
+               Librarian = librarian
+            };           
             InfoManager.MdiParent = this;
             InfoManager.Dock = DockStyle.Fill;
             InfoManager.Show();
